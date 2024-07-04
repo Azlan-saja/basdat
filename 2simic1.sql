@@ -1,8 +1,8 @@
--- MariaDB dump 10.19  Distrib 10.4.27-MariaDB, for Win64 (AMD64)
+-- MariaDB dump 10.19  Distrib 10.4.32-MariaDB, for Win64 (AMD64)
 --
--- Host: localhost    Database: 2SIMIC1
+-- Host: localhost    Database: 2simic1
 -- ------------------------------------------------------
--- Server version	10.4.27-MariaDB
+-- Server version	10.4.32-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -40,6 +40,34 @@ LOCK TABLES `dosen` WRITE;
 INSERT INTO `dosen` VALUES (101909999,'Kudut','S2','Sistem Informasi'),(1019010000,'Azlan','S2','Sistem Informasi'),(1019011212,'Ucok','S3','Sistem Komputer'),(1019019201,'Anto','S3','Manajemen Informasi');
 /*!40000 ALTER TABLE `dosen` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `mahasiswa`
+--
+
+DROP TABLE IF EXISTS `mahasiswa`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mahasiswa` (
+  `nirm` int(10) NOT NULL,
+  `nama` varchar(50) DEFAULT NULL,
+  `jurusan` char(2) DEFAULT NULL,
+  `semester` char(2) DEFAULT NULL,
+  `kelas` varchar(8) DEFAULT NULL,
+  `Dosen_NIDN` int(11) DEFAULT NULL,
+  PRIMARY KEY (`nirm`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mahasiswa`
+--
+
+LOCK TABLES `mahasiswa` WRITE;
+/*!40000 ALTER TABLE `mahasiswa` DISABLE KEYS */;
+INSERT INTO `mahasiswa` VALUES (111,'Ani','SI','II','2SIMIC1',101909999),(112,'Amat','SI','II','2SIMIC1',1019011212),(113,'Anjeli','SI','II','2SIMIC1',1019011212),(114,'Ramos','SI','II','2SIC1',1019019201),(115,'Rahul','SI','II','2MIC1',1019019201);
+/*!40000 ALTER TABLE `mahasiswa` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -50,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-30 18:32:31
+-- Dump completed on 2024-07-04 20:20:35
